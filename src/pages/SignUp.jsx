@@ -10,7 +10,7 @@ import Testimonials from '../components/Testimonials';
 
 export default function SignUp() {
   useEffect(() => {
-    AOS.init({ duration: 2000, once:false });
+    AOS.init({ duration: 2000, once: true });
   }, []);
 
   const [formData, setFormData] = useState({
@@ -19,6 +19,7 @@ export default function SignUp() {
     phone: '',
     agreed: false,
   });
+
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (e) => {
@@ -58,10 +59,10 @@ export default function SignUp() {
   };
 
   return (
-    <section className="py-16 bg-gray-50">
+    <section className="py-16 bg-black text-neutral-200">
       <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center px-6">
-        {/* Image Section */}
-        <div className="hidd block" data-aos="fade-right">
+        {/* Image */}
+        <div data-aos="fade-right">
           <img
             src={SignUpImg}
             alt="Join the Academy"
@@ -69,45 +70,45 @@ export default function SignUp() {
           />
         </div>
 
-        {/* Form Section */}
+        {/* Form */}
         <div data-aos="fade-left">
-          <h2 className="text-3xl md:text-4xl font-bold text-indigo-700 mb-4">Your Next Step</h2>
-          <p className="text-gray-700 mb-6 text-base md:text-lg">
+          <h2 className="text-3xl md:text-4xl font-bold text-yellow-400 mb-4">Your Next Step</h2>
+          <p className="text-neutral-400 mb-6 text-base md:text-lg">
             This is more than a course — it’s your launchpad. Fill out the form for a free compatibility check. Spots are limited.
           </p>
 
           <form
             onSubmit={handleSubmit}
-            className="bg-white p-6 md:p-8 rounded-2xl mb-10 shadow-md space-y-5"
+            className="bg-neutral-900 p-6 md:p-8 rounded-2xl mb-10 shadow-md space-y-5"
           >
             <div>
-              <label className="block mb-1 font-medium text-sm text-gray-700">Full Name</label>
+              <label className="block mb-1 font-medium text-sm text-yellow-300">Full Name</label>
               <input
                 name="name"
                 type="text"
                 placeholder="Enter your full name"
                 value={formData.name}
                 onChange={handleChange}
-                className="w-full p-3 border rounded-lg outline-none"
+                className="w-full p-3 bg-black border border-neutral-700 rounded-lg text-white placeholder-gray-500 outline-none"
                 required
               />
             </div>
 
             <div>
-              <label className="block mb-1 font-medium text-sm text-gray-700">Email</label>
+              <label className="block mb-1 font-medium text-sm text-yellow-300">Email</label>
               <input
                 name="email"
                 type="email"
                 placeholder="Enter your email"
                 value={formData.email}
                 onChange={handleChange}
-                className="w-full p-3 border rounded-lg outline-none"
+                className="w-full p-3 bg-black border border-neutral-700 rounded-lg text-white placeholder-gray-500 outline-none"
                 required
               />
             </div>
 
             <div>
-              <label className="block mb-1 font-medium text-sm text-gray-700">Phone Number</label>
+              <label className="block mb-1 font-medium text-sm text-yellow-300">Phone Number</label>
               <input
                 name="phone"
                 type="tel"
@@ -118,12 +119,12 @@ export default function SignUp() {
                   handleChange({ target: { name: 'phone', value } });
                 }}
                 maxLength={11}
-                className="w-full p-3 border rounded-lg outline-none"
+                className="w-full p-3 bg-black border border-neutral-700 rounded-lg text-white placeholder-gray-500 outline-none"
                 required
               />
             </div>
 
-            <label className="block text-sm text-gray-600 cursor-pointer">
+            <label className="block text-sm text-neutral-400 cursor-pointer">
               <input
                 type="checkbox"
                 className="mr-2"
@@ -138,25 +139,24 @@ export default function SignUp() {
               disabled={isSubmitting || !formData.agreed}
               className={`w-full text-lg py-3 rounded-lg transition ${
                 isSubmitting || !formData.agreed
-                  ? 'bg-gray-400 text-white cursor-not-allowed'
-                  : 'bg-indigo-600 text-white hover:bg-indigo-700'
+                  ? 'bg-neutral-700 text-gray-400 cursor-not-allowed'
+                  : 'bg-yellow-500 text-black hover:bg-yellow-600'
               }`}
             >
               {isSubmitting ? 'Submitting...' : 'Join the Academy'}
             </button>
           </form>
-          <ToastContainer />
+          <ToastContainer theme="dark" />
         </div>
       </div>
 
-      {/* Testimonials Section */}
-      <section className="px-6 py-16 bg-indigo-500 text-white" data-aos="fade-up">
-        <h2 className="text-2xl md:text-[35px] font-bold text-center mb-6">What People Are Saying</h2>
+      {/* Testimonials */}
+      <section className=" text-white" data-aos="fade-up">
         <Testimonials />
       </section>
 
-      {/* FAQ Section */}
-      <section className="px-6 py-12 md:p-16" data-aos="fade-up">
+      {/* FAQ */}
+      <section className="px-6 py-12 md:p-16 bg-black text-white" data-aos="fade-up">
         <FAQ />
       </section>
     </section>

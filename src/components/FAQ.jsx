@@ -39,7 +39,7 @@ export default function FAQ() {
 
   return (
     <section className="px-4 md:px-6 max-w-3xl mx-auto">
-      <h2 className="text-2xl md:text-3xl font-bold text-center mb-8 text-indigo-800" data-aos="fade-up">
+      <h2 className="text-2xl md:text-3xl font-bold text-center mb-8 text-[#f9a825]" data-aos="fade-up">
         Frequently Asked Questions
       </h2>
       <div className="space-y-4">
@@ -48,21 +48,21 @@ export default function FAQ() {
             key={index}
             data-aos="fade-up"
             data-aos-delay={index * 100}
-            className="border border-gray-200 rounded-xl shadow-sm bg-white transition"
+            className="border border-gray-600 rounded-xl shadow-sm bg-gray-900 transition"
           >
             <button
               onClick={() => toggleFAQ(index)}
               className="w-full flex justify-between items-center px-4 py-4 text-left focus:outline-none"
             >
-              <span className="text-base md:text-lg font-medium text-gray-800">{faq.question}</span>
+              <span className="text-base md:text-lg font-medium text-white">{faq.question}</span>
               {openIndex === index ? (
-                <FiChevronUp className="text-indigo-600 text-xl md:text-2xl" />
+                <FiChevronUp className="text-[#f9a825] text-xl md:text-2xl" />
               ) : (
-                <FiChevronDown className="text-indigo-600 text-xl md:text-2xl" />
+                <FiChevronDown className="text-[#f9a825] text-xl md:text-2xl" />
               )}
             </button>
             {openIndex === index && (
-              <div className="px-4 pb-4 text-gray-600 text-sm md:text-base">
+              <div className="px-4 pb-4 text-gray-300 text-sm md:text-base">
                 {faq.answer}
               </div>
             )}

@@ -6,7 +6,7 @@ import FAQ from '../components/FAQ';
 import Testimonials from '../components/Testimonials';
 import Bella from '../Images/Img4.jpg';
 import Bella2 from '../Images/Img1_1.jpg';
-import HeroImg2 from '../Images/Img11.png';
+import HeroImg2 from '../Images/img7_2.png';
 import Academy from '../Images/Img10.png';
 import { FaArrowRight } from "react-icons/fa";
 import { ToastContainer, toast } from 'react-toastify';
@@ -15,7 +15,7 @@ import 'react-toastify/dist/ReactToastify.css';
 export default function Home() {
 
   useEffect(() => {
-    AOS.init({ duration: 2000, once: false });
+    AOS.init({ duration: 2000, once: true });
   }, []);
 
   const [formData, setFormData] = useState({
@@ -65,42 +65,44 @@ export default function Home() {
 
 
   return (
-    <div className="pb-10 mx-auto">
-      {/* Hero Section */}
-      <section className="text-center relative" data-aos="fade">
-        <div className="absolute inset-0 bg-black opacity-70 z-10"></div>
-
-        <div className="w-full absolute py-16 z-20 top-1/2 -translate-y-1/2 px-4">
-          <h1 data-aos="fade" className="sm:text-[50px] text-[40px] md:text-[74px] font-bold max-w-[700px] mx-auto text-white leading-tight md:leading-[85px] mb-4">
-            Your Roadmap to a 6-Figure Income
+    <div className="pb-10 mx-auto bg-black text-white">
+      <section className="relative min-h-[90vh] items-center justify-center overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-black via-[#222] to-[#ffc107] z-0"></div>
+        
+        <div className="relative z-10 text-center px-6 max-w-3xl mx-auto text-white pt-20 pb-40" data-aos="fade-up">
+          <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-6">
+            Your Roadmap to a <br /> 6‑Figure Income
           </h1>
-          <p data-aos="fade" data-aos-delay='100' className="text-[20px] md:text-[28px] text-white max-w-[700px] mx-auto my-6">
+          <p className="text-lg md:text-2xl mb-8">
             Turn your quiet dream into a bold reality—and wake up every day excited about your life.
           </p>
           <Link
             to="/signup"
-            data-aos="zoom-in" data-aos-delay="200"
-            className="bg-indigo-600 text-white px-6 py-3 rounded-lg hover:bg-indigo-700 transition"
+            className="inline-block bg-[#f9a825] text-black font-semibold px-6 py-3 rounded-full hover:bg-yellow-600 transition"
+            data-aos="zoom-in"
+            data-aos-delay="200"
           >
             I’m Ready to Start
           </Link>
         </div>
 
-        <img src={HeroImg2} className="object-cover h-screen w-full" alt="Hero" />
+        <div className="bottom-[130px] relative left-[35%] transform -translate-x-1/2 z-20 w-[320px] md:w-[450px]" data-aos="fade-up" data-aos-delay="300">
+          <img src={HeroImg2} alt="Hero" className="w-full h-auto" />
+        </div>
       </section>
 
       {/* About Snippet */}
-      <section className="px-4 py-16" data-aos="fade-up">
-        <h1 className='font-bold text-[28px] md:text-[35px] text-center'>ABOUT BELLA BAR LAWAL</h1>
+      <section className="px-4 py-16 bg-gray-900">
+        <h1 className='font-bold text-[28px] md:text-[35px] text-center' data-aos="fade-up">ABOUT BELLA BAR LAWAL</h1>
         <div className='flex flex-col md:flex-row gap-12 mt-7'>
           <div className='w-full mt-6 md:mt-20 text-[18px] md:text-[22px]'>
-            <p className="text-gray-700" data-aos="fade-right">
+            <p className="text-gray-300" data-aos="fade-right">
               From humble beginnings to thriving businesses, Bella’s journey proves that with the right mindset and strategy, anything is possible. She turned failure into fuel and built multiple successful brands from scratch.
               I’m Bella Bar Lawal — entrepreneur, business strategist, and mentor. I built multiple successful businesses from scratch after starting with nothing but grit, vision, and a decision to change my life.
               Today, I run a premium event and flower business, manage high-performing Airbnb properties, and help ambitious individuals turn passion into profit, break through fear, and build businesses that create real wealth and impact.
             </p>
             <Link data-aos="fade-right" to='/about' onClick={() => window.scrollTo(0, 0)}>
-              <p className='flex items-center gap-2 mt-4 text-[16px] md:text-[18px] text-indigo-600'>
+              <p data-aos="fade-right" data-aos-delay='200' className='flex items-center gap-2 mt-4 text-[16px] md:text-[18px] text-[#f9a825]'>
                 Learn More
                 <FaArrowRight className='mt-1' />
               </p>
@@ -112,24 +114,24 @@ export default function Home() {
       </section>
 
       {/* Why Work With Me */}
-      <section data-aos="fade-up" className="px-4 py-16 bg-gray-50 rounded-xl">
-        <h2 className="text-[28px] md:text-[35px] text-center font-bold mb-4">Why Work With Me?</h2>
-        <p className="text-gray-700 text-[18px] md:text-[23px] text-center mb-8">
+      <section className="px-4 py-16 bg-[#1a1a1a] text-white rounded-xl">
+        <h2 className="text-[28px] md:text-[35px] text-center font-bold mb-4" data-aos="zoom-in">Why Work With Me?</h2>
+        <p data-aos="fade-up" className="text-[18px] md:text-[23px] text-center mb-8">
           Many entrepreneurs focus only on their product—but without marketing, sales, <br className="hidden md:block" /> and structure, even the best ideas fail. That’s where I come in.
         </p>
         <div className="grid gap-6 md:grid-cols-2 max-w-[950px] mx-auto">
           {["Master the art of sales", "Build a standout brand", "Leverage social media for visibility and income", "Turn passion into profit with proven systems"].map((item, index) => (
-            <div data-aos="fade-up" data-aos-delay={index * 100} key={index} className="flex items-center gap-4 p-4 bg-white shadow rounded-2xl">
-              <span className="text-green-600 text-2xl">✔️</span>
-              <p className="text-gray-800 text-base md:text-lg">{item}</p>
+            <div data-aos="fade-up" data-aos-delay={index * 200} key={index} className="flex items-center gap-4 p-4 bg-[#2a2a2a] shadow rounded-2xl text-[#f9a825]">
+              <span className="text-2xl">✔️</span>
+              <p className="text-[#f9a825] text-base md:text-lg">{item}</p>
             </div>
           ))}
         </div>
       </section>
 
       {/* Quick Signup Form */}
-      <section className="px-4 py-16 bg-indigo-500" data-aos="zoom-in">
-        <h2 className="text-[24px] md:text-[32px] text-center font-bold text-white mb-4">Ready to take your business to the next level?</h2>
+      <section className="px-4 py-16 bg-[#cb891f]">
+        <h2 className="text-[24px] md:text-[32px] text-center font-bold text-white mb-4" data-aos="zoom-in">Ready to take your business to the next level?</h2>
         <h2 className="text-[20px] md:text-[25px] text-center font-semibold text-white mb-4">Join the Academy</h2>
         <p className="mb-4 text-center text-white">Fill in your details for a free compatibility check.</p>
         <form onSubmit={handleSubmit} className="grid grid-cols-1 gap-4 max-w-xl mx-auto">
@@ -141,7 +143,7 @@ export default function Home() {
               placeholder="Enter your full name"
               value={formData.name}
               onChange={handleChange}
-              className="w-full p-3 border rounded-lg outline-none"
+              className="w-full p-3 border rounded-lg outline-none bg-white text-black"
               required
             />
           </div>
@@ -153,7 +155,7 @@ export default function Home() {
               placeholder="Enter your email"
               value={formData.email}
               onChange={handleChange}
-              className="w-full p-3 border rounded-lg outline-none"
+              className="w-full p-3 border rounded-lg outline-none bg-white text-black"
               required
             />
           </div>
@@ -169,7 +171,7 @@ export default function Home() {
                 handleChange({ target: { name: 'phone', value } });
               }}
               maxLength={11}
-              className="w-full p-3 border rounded-lg outline-none"
+              className="w-full p-3 border rounded-lg outline-none bg-white text-black"
               required
             />
           </div>
@@ -185,7 +187,7 @@ export default function Home() {
           <button
             type="submit"
             disabled={isSubmitting || !formData.agreed}
-            className={`w-full text-lg py-2 rounded-lg transition ${isSubmitting || !formData.agreed ? 'bg-gray-300 text-gray-500 cursor-not-allowed' : 'bg-yellow-500 text-white hover:bg-yellow-600'}`}
+            className={`w-full text-lg py-2 rounded-lg transition ${isSubmitting || !formData.agreed ? 'bg-gray-300 text-gray-500 cursor-not-allowed' : 'bg-[#121212] text-white hover:bg-yellow-600'}`}
           >
             {isSubmitting ? 'Submitting...' : 'Join Now'}
           </button>
@@ -194,27 +196,27 @@ export default function Home() {
       </section>
 
       {/* Truth About Staying Stuck */}
-      <section className="px-4 py-16 bg-indigo-50 rounded-2xl" data-aos="fade-up">
-        <h2 className="text-2xl md:text-4xl font-bold text-center text-indigo-800 mb-8">The Truth About Staying Stuck</h2>
-        <div className="text-gray-700 text-base md:text-lg space-y-6 max-w-3xl mx-auto text-center">
+      <section className="px-4 py-16 bg-[#121212] text-gray-300 rounded-2xl" data-aos="fade-up">
+        <h2 className="text-2xl md:text-4xl font-bold text-center text-[#f9a825] mb-8">The Truth About Staying Stuck</h2>
+        <div className="text-white text-base md:text-lg space-y-6 max-w-3xl mx-auto text-center">
           <p>How long have you been dreaming about your business? Another year goes by—same job, same routine, same frustrations.</p>
           <p>You see others thriving online and wonder, <span className="italic">“Why not me?”</span></p>
-          <p className="font-semibold text-gray-800">The answer: Clarity, strategy, and support.</p>
+          <p className="font-semibold text-white/70">The answer: Clarity, strategy, and support.</p>
           <p>What if it actually works? What if you finally create the income, freedom, and lifestyle you’ve wanted for years?</p>
-          <p className="text-xl font-medium text-indigo-700">If nothing changes today, nothing changes tomorrow.</p>
+          <p className="text-xl font-medium text-[#f9a825]">If nothing changes today, nothing changes tomorrow.</p>
           <p>You don’t need another dream. <span className="font-semibold">You need a plan</span> — and a mentor who’s walked the path.</p>
         </div>
       </section>
 
       {/* Academy Preview */}
-      <section className="py-16 px-4 md:px-20 bg-white" data-aos="fade-up">
+      <section className="py-16 px-4 md:px-20 bg-[#1a1a1a] text-white" data-aos="fade-up">
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 items-center gap-12">
           <div>
-            <h2 className="text-2xl md:text-4xl font-bold text-indigo-800 mb-2">THE ACADEMY</h2>
-            <h3 className="text-lg md:text-2xl font-medium text-indigo-600 mb-4">Why This Academy Exists</h3>
-            <p className="text-gray-700 text-base md:text-lg mb-4">You’ve dreamed of starting or growing your business—but something always holds you back. This academy was created to help people like you turn your dream into reality, with the right plan, mindset, and support.</p>
-            <p className="text-gray-600 text-sm md:text-base mb-6">A 7-session transformational experience for driven individuals ready to build profitable, purpose-driven businesses.</p>
-            <Link to="/academy" onClick={() => window.scrollTo(0, 0)} className="mt-2 text-indigo-600 flex items-center gap-2 font-semibold text-[16px] md:text-[18px] hover:text-indigo-800 transition">
+            <h2 className="text-2xl md:text-4xl font-bold text-[#cb891f] mb-2">THE ACADEMY</h2>
+            <h3 className="text-lg md:text-2xl font-medium text-[#f9a825] mb-4">Why This Academy Exists</h3>
+            <p className="text-gray-200 text-base md:text-lg mb-4">You’ve dreamed of starting or growing your business—but something always holds you back. This academy was created to help people like you turn your dream into reality, with the right plan, mindset, and support.</p>
+            <p className="text-gray-300 text-sm md:text-base mb-6">A 7-session transformational experience for driven individuals ready to build profitable, purpose-driven businesses.</p>
+            <Link to="/academy" onClick={() => window.scrollTo(0, 0)} className="mt-2 text-[#f9a825] flex items-center gap-2 font-semibold text-[16px] md:text-[18px] hover:text-indigo-800 transition">
               Learn more about the Academy
               <FaArrowRight className='mt-1' />
             </Link>
@@ -226,8 +228,7 @@ export default function Home() {
       </section>
 
       {/* Testimonials Component */}
-      <section className="px-4 py-16 bg-indigo-500 text-white" data-aos="zoom-in">
-        <h2 className="text-[28px] md:text-[35px] font-bold text-center mb-4">What People Are Saying</h2>
+      <section className="rounded-2xl shadow-md">
         <Testimonials />
       </section>
 
@@ -241,7 +242,7 @@ export default function Home() {
           <img src={Bella2} alt="Bella Bar Lawal" className="w-48 h-48 md:w-64 md:h-64 object-cover rounded-full shadow-lg" />
         </div>
         <div>
-          <h2 className="text-2xl md:text-3xl font-bold text-indigo-800 mb-4">Meet Your Coach</h2>
+          <h2 className="text-2xl md:text-3xl font-bold text-[#f9a825] mb-4">Meet Your Coach</h2>
           <p className="text-gray-700 text-base md:text-lg mb-3 leading-relaxed">Hi, I’m <strong>Bella Bar Lawal</strong>. I know what it’s like to feel stuck—scrolling social media, working minimum-wage jobs, and starting businesses that didn’t work… until they did.</p>
           <p className="text-gray-700 text-base md:text-lg mb-3 leading-relaxed">Through every failure, I gained insight. Today, I run multiple successful businesses and mentor entrepreneurs across the globe. I built everything from the ground up—and I’m here to help you do the same.</p>
           <p className="text-gray-700 text-base md:text-lg leading-relaxed">No fluff. Just clarity, strategy, and step-by-step support to help you build the life and business you deserve.</p>
