@@ -6,7 +6,7 @@ import FAQ from '../components/FAQ';
 import Testimonials from '../components/Testimonials';
 import Bella from '../Images/Img4.jpg';
 import Bella2 from '../Images/Img1_1.jpg';
-import HeroImg2 from '../Images/img7_2.png';
+import HeroImg2 from '../Images/Img7_3.png';
 import Academy from '../Images/Img10.png';
 import { FaArrowRight } from "react-icons/fa";
 import { ToastContainer, toast } from 'react-toastify';
@@ -69,7 +69,7 @@ export default function Home() {
       <section className="relative min-h-[90vh] items-center justify-center overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-black via-[#222] to-[#ffc107] z-0"></div>
 
-        <div className="relative z-10 text-center px-6 max-w-3xl mx-auto text-white pt-20 pb-40" data-aos="fade-up">
+        <div className="relative z-10 text-center px-6 max-w-3xl mx-auto text-white pt-[110px]" data-aos="fade-up">
           <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-6">
             Your Roadmap to a <br /> 6‑Figure Income
           </h1>
@@ -86,13 +86,13 @@ export default function Home() {
           </Link>
         </div>
 
-        <div className="bottom-[130px] relative mx-auto pl-14 z-20 w-[320px] md:w-[450px]">
+        <div className="relative mx-auto pl-14 z-20 max-w-[450px] md:max-w-[600px]">
           <img src={HeroImg2} alt="Hero" className="w-full h-auto" />
         </div>
       </section>
 
       {/* About Snippet */}
-      <section className="px-4 py-16 bg-gray-900">
+      <section className="px-4 md:px-20 py-16 bg-gray-900">
         <h1 className='font-bold text-[28px] md:text-[35px] text-center' data-aos="fade-up">ABOUT BELLA BAR LAWAL</h1>
         <div className='flex flex-col md:flex-row gap-12 mt-7'>
           <div className='w-full mt-6 md:mt-20 text-[18px] md:text-[22px]'>
