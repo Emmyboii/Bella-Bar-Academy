@@ -53,7 +53,6 @@ export default function About() {
             src={Bella}
             className="w-full md:w-[500px] h-auto rounded-lg object-cover shadow-lg"
             alt="Bella Bar Lawal"
-            data-aos="fade-left"
           />
         </div>
       </div>
